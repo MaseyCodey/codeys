@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeyForge Demo Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <span>KeyForge</span>
+        </div>
+        <span class="pill">Demo key generator</span>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="copy">
+          <p class="eyebrow">GitHub Pages + Actions</p>
+          <h1>Pretty demo keys, forged on schedule.</h1>
+          <p class="subtext">
+            A fast aesthetic website for generating Steam-style placeholder keys for UI testing,
+            fake store pages, Roblox/game menus, forms, and dashboards. This does not redeem,
+            validate, test, scrape, brute force, or contact Steam.
+          </p>
+
+          <div class="controls">
+            <select id="type">
+              <option value="standard">Standard: XXXXX-XXXXX-XXXXX</option>
+              <option value="extended">Extended: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</option>
+              <option value="special">Special: XXXXXXXXXXXXXXX XX</option>
+            </select>
+            <input id="amount" type="number" min="1" max="100" value="24" />
+            <button id="generate">Generate</button>
+          </div>
+
+          <div class="actions">
+            <button class="ghost" id="copy">Copy all</button>
+            <button class="ghost" id="download">Download .txt</button>
+            <button class="ghost" id="loadNightly">Load Action batch</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-top">
+            <span>Live demo keys</span>
+            <span id="count">24 generated</span>
+          </div>
+          <div id="keys" class="keys"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overnight">
+      <div>
+        <p class="eyebrow">Automation</p>
+        <h2>Scheduled batches, not fake 24/7 loops.</h2>
+        <p>
+          GitHub Actions runs on a cron schedule. This project creates fresh demo keys every
+          30 minutes and commits them to <code>data/generated-keys.json</code>.
+        </p>
+      </div>
+      <div class="status-card">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Safe mode</strong>
+          <p>Generates fake placeholder keys only. No Steam validation or live service testing.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built for demo/testing purposes only. Not affiliated with Steam or Valve.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
